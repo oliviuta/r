@@ -1,0 +1,545 @@
+---
+title: "PSYC 496 - Testing the Effects of Perceived Peformance Feedback"
+author: "Olivia Luca, Mitch Jelden & Disha Sivakumar"
+output:
+  html_document:
+    theme: journal
+    df_print: paged
+  pdf_document: default
+---
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+**Hypothesis:** Test performance feedback will have an effect on self-confidence levels. More specifically, participants in the positive condition will score higher in self-report questionnaires regarding self-confidence, than those in the negative and neutral conditions.
+
+**Background:** A common task college-age students come across, tests, are essential to academic performance and success, which translates to an important part of a student’s self-identity. Previous literature has shown that some students take extreme measures when this factor causes stress for a prolonged period of time. Our research centralizes on understanding and establishing an effect between test performance feedback and self-confidence levels by means of two measurements. 132 college students first responded to a pretest self-report confidence measure and were re-evaluated following a difficult exam. They were randomly assigned scores and their self-confidence was measured again after the test performance feedback. The second exploratory measure assessed time spent editing one’s Instagram photo following the exam performance feedback.   
+
+**Qualtrics:** [Qualtrics Experiment](https://illinoislas.qualtrics.com/jfe/form/SV_aXdKAQnhi1EhHWR)    
+
+To better understand how we collected data for our pre-test/post-test measures, we invite you to personally try the experiment linked above. This will give you a much clearer understanding of what we deemed a difficult exam in the experiment, how participants were evaluated, as well as give you a better idea of our measures and conditions.    
+
+-----------------------------------------------------------------------------------------------
+**Relevant Variables:**    
+
+*<sup>For E1 - E8: **Bold** = Correct Answer<sup>   
+
+<mark>'GENDER ' :</mark>   What gender do you identify as?   
+
+Coded as:   
+1 = Male    
+2 = Female    
+3 = Other   
+
+<mark>'AGE ' :</mark>   What is your current age?   
+<mark>'YEAR ' :</mark>   What is your year in school?   
+
+Coded as:   
+1 = Freshman    
+2 = Sophomore   
+3 = Junior    
+4 = Senior    
+5 = Grad       
+
+<mark>'MAJOR ' :</mark>   What is your major?   
+<mark>'MOOD_3 ' :</mark>   On a scale of 0-6, how confident do you feel right now? [Pre-test confidence measure]  
+
+Coded as:   
+0 = Not at all ... 6 = Extremely    
+
+<mark>'E1 ' :</mark>   Consider the following equation:(s^3^)(t^3^) = v^2^ ; If s and t are both primes, how many positive divisors of v are greater than 1, if v is an integer?    
+
+Coded as:   
+1 = two   
+**2 = three**  
+3 = five  
+4 = six   
+5 = eight  
+
+<mark>'E2 ' :</mark>   What part of the computer is the BIOS located in?    
+Coded as:   
+1 = CPU   
+2 = Solid-State Drive   
+3 = RAM   
+4 = Graphics Card   
+**5 = Motherboard**   
+
+<mark>'E3 ' :</mark>   Quantity A = (x^2^+1) ; Quantity B = (2x-1)   
+
+Coded as:   
+**1 = Quantity A is greater**   
+2 = Quantity B is greater   
+3 = They are both equal   
+4 = The relationship cannot be determined from the information given    
+
+<mark>'E4 ' :</mark>   Approximately what fraction of the human genome encodes proteins?   
+
+Coded as:   
+**1 = 2%**    
+2 = 25%   
+3 = 50%   
+4 = 90%   
+5 = 99%   
+
+<mark>'E5 ' :</mark>   Joseph Schumpeter argued that...   
+
+Coded as:   
+1 = the existence of elites is incompatible with democracy    
+2 = democracy is meaningless with mass participation   
+**3 = the democratic process should be understood as competition between rival elites**    
+4 = politicians should consult their ministerial colleagues before taking decisions   
+
+<mark>'E6 ' :</mark>   Mulcahy, in averring that most literary criticism has become so filled with abstruse jargon as to be practically indecipherable to anyone save its practitioners, is himself _______________: his main point will be discernible only to the very community he seeks to _______________.    
+
+Coded as:   
+1 = Uncertain; defend   
+**2 = Complicit; impugn**   
+3 = Enlightened; inform   
+4 = Uncertain; inform   
+5 = Complicit; defend   
+6 = Enlightened; impugn   
+
+<mark>'E7 ' :</mark>   Which of the following is not a real country?    
+
+Coded as:   
+1 = Djibouti    
+2 = Nauru   
+3 = Tuvalu    
+4 = Kiribati    
+5 = All of the above    
+**6 = None of the above**   
+
+<mark>'E8 ' :</mark>   Who were the belligerents in the first Punic War?   
+Coded as:   
+1 = Egypt and Sumeria   
+2 = Athens and Sparta   
+3 = Mali and Morocco    
+**4 = Rome and Carthage**   
+5 = Mesopotamia and Babylonia   
+
+<mark>'GUESS_1 ' :</mark>   How many questions did you guess on?    
+
+Coded as: 1 - 8   
+
+<mark>'Conditions ' :</mark>   Randomly assigned test condition    
+
+Coded as:   
+-1 = negative - 3/8 below average   
+0 = neutral - 5/8 average   
+1 = positive - 7/8 above average    
+
+<mark>'SELF.TIME ' :</mark>   Time spent taking and editing Instagram photo; timed measure      
+
+Coded in seconds    
+
+<mark>'SCONFIDS_1 ' :</mark>   Other people find me physically attractive [Post-test confidence measure]    
+
+Coded as:   
+1 = Strongly disagree   
+2 = Disagree    
+3 = Slightly Disagree   
+4 = Neutral   
+5 = Slightly Agree    
+6 = Agree   
+7 = Strongly Agree    
+
+<mark>'SCONFIDS_2 ' :</mark>   I am satisfied with my physical appearance [Post-test confidence measure]    
+
+Coded as:       
+1 = Strongly disagree     
+2 = Disagree    
+3 = Slightly Disagree   
+4 = Neutral   
+5 = Slightly Agree    
+6 = Agree   
+7 = Strongly Agree    
+
+<mark>'SCONFIDS_3 ' :</mark>   I wish I were more attractive [Post-test confidence measure]   
+
+Coded as:       
+1 = Strongly disagree     
+2 = Disagree    
+3 = Slightly Disagree   
+4 = Neutral   
+5 = Slightly Agree    
+6 = Agree   
+7 = Strongly Agree    
+
+
+```{r}
+#Loading R packages
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(plotly)
+library(tibble)
+library(plotrix)
+library(ggpubr)
+```
+
+```{r}
+#Used these functions to view and set my current working directory
+getwd()
+setwd("C:/Users/olivi/Desktop/PSYC 496")
+```
+
+
+```{r}
+#Find the correct data file for the project
+list.files("C:/Users/olivi/Desktop/PSYC 496")
+```
+
+
+```{r}
+project.file <- read.csv("Data Digitized.csv")
+project.file
+```
+
+## Relevant Data
+```{r}
+#Selecting relevant columns from data 
+data <- select(project.file,one_of(c("GENDER","AGE","YEAR","MOOD_3","E1","E2","E3","E4","E5","E6","E7","E8","GUESS_1", "SELF.TIME","SCONFIDS_1","SCONFIDS_2","SCONFIDS_3")))
+data
+```
+
+
+```{r}
+#Since the randomly assigned condition wasn't exported from Qualtrics into the .csv file, we had to manually add them. Here we binded the 'Conditions' data frame to the rest of the data from the original .csv file
+
+Conditions <- data_frame('Conditions' = c(-1,0,1,0,-1,-1,1,0,-1,1,-1,1,0,0,-1,1,1,0,-1,-1,0,1,-1,0,-1,0,1,-1,1,-1,0,0,1,1,0,-1,-1,1,0,-1,0,1,1,0,-1,0,-1,1,1,0,-1,-1,1,0,0,1,-1,-1,1,0,-1,0,1,1,-1,0,0,1,-1,-1,1,0,-1,1,0,1,0,-1,0,-1,1,0,1,-1,1,0,-1,0,1,-1,0,-1,1,-1,1,0,0,1,-1,-1,1,0,1,0,-1,0,-1,1,1,0,-1,1,0,-1,-1,1,0,1,0,-1,1,0,-1,-1,-1,1,0,1,0,-1,0,1))
+
+fulldata<-bind_cols(data,Conditions)
+fulldata
+
+```
+
+## Pretest & Posttest Confidence Measures   
+
+MOOD_3 was coded as our pretest confidence measure and the combined average of SCONFIDS1, SCONFIDS2, and SCONFIDS3 was coded as our posttest confidence measure.
+```{r}
+#Calculating pretest and posttest averages
+pretest <- mean(as.numeric(fulldata$MOOD_3),na.rm=TRUE)
+pretest
+
+post1 <- mean(as.numeric(fulldata$SCONFIDS_1),na.rm=TRUE)
+
+post2 <- mean(as.numeric(fulldata$SCONFIDS_2),na.rm=TRUE)
+
+post3 <- mean(as.numeric(fulldata$SCONFIDS_3),na.rm=TRUE)
+
+post <- c(post1, post2, post3)
+
+posttest <- mean(as.numeric(post),na.rm=TRUE)
+posttest
+```
+
+### Average Pretest Confidence Measure by Perceived Performance Feedback Conditions
+```{r}
+#See all the unique values for conditions
+cond <- fulldata$Conditions
+unique(cond)
+
+#Negative condition sample mean for pretest confidence measure
+neg <- fulldata[fulldata$Conditions == -1, ]
+
+negpre <- mean(as.numeric(neg$MOOD_3),na.rm=TRUE)
+negpre
+
+#Neutral condition sample mean for pretest confidence measure
+neu <- fulldata[fulldata$Conditions == 0, ]
+
+neupre <- mean(as.numeric(neu$MOOD_3),na.rm=TRUE)
+neupre
+
+#Positive condition sample mean for pretest confidence measure
+pos <- fulldata[fulldata$Conditions == 1, ]
+
+pospre <- mean(as.numeric(pos$MOOD_3),na.rm=TRUE)
+pospre
+```
+
+### Average Posttest Confidence Measure by Perceived Performance Feedback Conditions
+```{r}
+#Negative Condition
+neg_post1 <- mean(as.numeric(neg$SCONFIDS_1),na.rm=TRUE)
+
+neg_post2 <- mean(as.numeric(neg$SCONFIDS_2),na.rm=TRUE)
+
+neg_post3 <- mean(as.numeric(neg$SCONFIDS_3),na.rm=TRUE)
+
+negpostcombined <- c(neg_post1, neg_post2, neg_post3)
+
+negpost <- mean(negpostcombined)
+negpost
+```
+
+```{r}
+#Neutral Condition
+neu_post1 <- mean(as.numeric(neu$SCONFIDS_1),na.rm=TRUE)
+
+neu_post2 <- mean(as.numeric(neu$SCONFIDS_2),na.rm=TRUE)
+
+neu_post3 <- mean(as.numeric(neu$SCONFIDS_3),na.rm=TRUE)
+
+neupostcombined <- c(neu_post1, neu_post2, neu_post3)
+
+neupost <- mean(neupostcombined)
+neupost
+```
+
+```{r}
+#Positive Condition
+pos_post1 <- mean(as.numeric(pos$SCONFIDS_1),na.rm=TRUE)
+
+pos_post2 <- mean(as.numeric(pos$SCONFIDS_2),na.rm=TRUE)
+
+pos_post3 <- mean(as.numeric(pos$SCONFIDS_3),na.rm=TRUE)
+
+pospostcombined <- c(pos_post1, pos_post2, pos_post3)
+
+pospost <- mean(pospostcombined)
+pospost
+```
+```{r}
+#Pretest Confidence Measure vs Condition Bargraph
+confpre <- data.frame(
+  x = c("Negative", "Neutral", "Positive"),
+  y = c(negpre,neupre,pospre)
+  )
+
+confpreplot<-ggplot(data=confpre, aes(x,y)) + geom_bar(stat="identity", fill=c('royalblue3', 'cadetblue2','brown1')) + ggtitle("Pretest Confidence Measure vs Condition") + ylab('Likert Scale Mood Measure (Confidence)') + xlab('Condition')
+confpreplot
+```
+```{r}
+#Posttest Confidence Measure vs Condition Bargraph
+confpost <- data.frame(
+  x = c("Negative", "Neutral", "Positive"),
+  y = c(negpost,neupost,pospost)
+  )
+
+confpostplot<-ggplot(data=confpost, aes(x,y)) + geom_bar(stat="identity", fill=c('blue4','darkcyan','red4')) + ggtitle("Posttest Confidence Measure vs Condition") + ylab('Likert Scale Mood Measure (Confidence)') + xlab('Condition')
+confpostplot
+```
+
+## One-Way Anova to Calculate Self-Report Confidence Measure Significance    
+
+**Null Hypothesis:** all conditions (positive, negative, neutral) are statistically the same for the self-report confidence level    
+**H<sub>0</sub>:** pospost = negpost = neupost         
+
+
+**Alternate Hypothesis:** at least one condition group is statistically significantly different for the self-report confidence level    
+**H<sub>a</sub>:** pospost $\neq$ negpost $\neq$ neupost 
+```{r}
+#Our PSYC 332 professor told us to use a One-Way ANOVA test to test significance for our experiment since our participants were randomly assigned into three condition groups, normality was assumed (in general for the class) for the dependent variable, and each observation was independent of each other
+
+#Adding the posttest combined average confidence measure as a column to our data frame for easier testing with ANOVA
+fulldata$SCONFIDS <- (fulldata$SCONFIDS_1 + fulldata$SCONFIDS_2 + fulldata$SCONFIDS_3)/3
+```
+
+```{r}
+#Significance test for self-report confidence level
+anova_conf <- aov(Conditions~SCONFIDS, data=fulldata)
+summary(anova_conf)
+```
+Given that the p-value (**Pr(>F)**=0.131) is greater than the 0.05 significance level, we fail to reject H<sub>0</sub> and conclude that there is no evidence that the perceived performance feedback condition affects self-report confidence levels.    
+
+
+## Timed Measure    
+
+### Negative Condition - Timed Measure
+```{r}
+#Negative condition sample mean for timed measure
+neg_time_mean <- mean(as.numeric(neg$SELF.TIME),na.rm=TRUE)
+neg_time_mean
+
+#Negative condition sample mean for timed measure in minutes
+neg_min <- neg_time_mean/60
+nmin <- as.character(neg_min)
+print_nmin <- paste("The negative condition sample mean for timed measure is ~", nmin , " minutes.", sep="")
+print_nmin
+
+```
+
+### Neutral Condition - Timed Measure
+```{r}
+#Neutral condition sample mean for timed measure
+neu_time_mean <- mean(as.numeric(neu$SELF.TIME),na.rm=TRUE)
+neu_time_mean
+
+#Neutral condition sample mean for timed measure in minutes
+neu_min <- neu_time_mean/60
+neumin <- as.character(neu_min)
+print_neumin <- paste("The neutral condition sample mean for timed measure is ~", neumin , " minutes.", sep="")
+print_neumin
+
+```
+
+### Positive Condition - Timed Measure
+```{r}
+#Positive condition sample mean for timed measure
+pos_time_mean <- mean(as.numeric(pos$SELF.TIME),na.rm=TRUE)
+pos_time_mean
+
+#Positive condition sample mean for timed measure in minutes
+p_min <- pos_time_mean/60
+pmin <- as.character(p_min)
+print_pmin <- paste("The positive condition sample mean for timed measure is ~", pmin , " minutes.", sep="")
+print_pmin
+```
+
+## Using One-Way Anova to Calculate Timed Measure Significance    
+
+**Null Hypothesis:** all conditions (positive, negative, neutral) are statistically the same for the amount of time spent editing one's Instagram photo    
+**H<sub>0</sub>:** pos_time_mean = neg_time_mean = neu_time_mean         
+
+
+**Alternate Hypothesis:** at least one condition group is statistically significantly different for the amount of time spent editing one's Instagram photo      
+**H<sub>a</sub>:** pos_time_mean $\neq$ neg_time_mean $\neq$ neu_time_mean    
+
+```{r}
+#Significance test for timed measure
+anova_timed <- aov(SELF.TIME~Conditions, data=fulldata)
+summary(anova_timed)
+```
+Given that the p-value (**Pr(>F)**=0.0531) is greater than the 0.05 significance level, we fail to reject H<sub>0</sub> and conclude that there is no evidence that the perceived performance feedback condition affects the amount of time spent editing one's Instagram photo.   
+
+### Barplot of Timed Measure
+
+```{r}
+#Barplot of Timed measure by Condition
+dfbar <- data.frame(
+  Condition = c("Negative", "Neutral", "Positive"),
+  Seconds = c(neg_time_mean, neu_time_mean, pos_time_mean)
+  )
+
+barplot<-ggplot(data=dfbar, aes(x=Condition, y=Seconds)) + geom_bar(stat="identity", fill=c('blueviolet','springgreen3','gold')) + ggtitle("Average Time Editing One's Photo (in seconds) vs Condition") + ylab('Time (in seconds)')
+barplot
+```
+  
+The bargraph above also parallels our ANOVA findings, in that we can visibly see no significant difference amongst the three conditions for our timed measure. All three conditions have relatively close averages. We actually see a slight reverse in what we expected to happen: we thought people in the negative condition would have the highest average amount of time spent editing their Instagram photo, people in the positive condition would have the lowest average amount of time spent editing their photos, and people in the neutral condition would have somewhere in between the negative and positive average. Instead, people in the negative condition spent the least amount of time, people in neutral the highest, and people in positive slightly lower, but almost equal to the neutral condition.    
+
+-----------------------------------------------------------------------------------------------   
+ 
+## Interesting Findings   
+
+```{r}
+#Gender by Time Significance Test
+anova_conf <- aov(GENDER~SELF.TIME, data=fulldata)
+summary(anova_conf)
+```
+There was a significant gender by time interaction, with males spending almost 30s more editing their photos than females. This is not what we expected, we thought there would be a reverse effect. We are not sure what to account for this difference.    
+
+```{r}
+#Gender by pretest self-report confidence level
+anova_conf <- aov(GENDER~MOOD_3, data=fulldata)
+summary(anova_conf)
+```
+There was a gender by confidence effect for the pretest confidence measure with women depicting lower levels of confidence, however...
+
+```{r}
+#Gender by posttest self-report confidence level
+anova_conf <- aov(GENDER~SCONFIDS, data=fulldata)
+summary(anova_conf)
+```
+...that effect was not replicated for the posttest confidence measure.    
+
+### Was the exam actually difficult?    
+
+While creating the exam for the participants to take, we intentionally tried to make it difficult by testing different specialized content for each question so that most participants wouldn't score well and would have to guess. Then, their assigned perceived performance feedback condition would be believable, though not actually accurate. We aggregated questions from the GRE, MCAT, and other grad-student assessments, so in this section we thought it would be interesting to find out if the exam was actually difficult.
+```{r}
+#Calculating how many students got each question of the difficult exam on Qualtrics correct
+
+E1c <- data.frame(E1=c(1,2,3,4,5)) ; sum(fulldata$E1==2, na.rm=T)
+E1p <- 49/132
+
+E2c <- data.frame(E2=c(1,2,3,4,5)) ; sum(fulldata$E2==5, na.rm=T)
+E2p <- 38/132
+
+E3c <- data.frame(E3=c(1,2,3,4)) ; sum(fulldata$E3==1, na.rm=T)
+E3p <- 85/132
+
+E4c <- data.frame(E4=c(1,2,3,4,5)) ; sum(fulldata$E4==1, na.rm=T)
+E4p <- 24/132
+
+E5c <- data.frame(E5=c(1,2,3,4)) ; sum(fulldata$E5==3, na.rm=T)
+E5p <- 45/132
+
+E6c <- data.frame(E6=c(1,2,3,4,5,6)) ; sum(fulldata$E6==2, na.rm=T)
+E6p <- 35/132
+
+E7c <- data.frame(E7=c(1,2,3,4,5,6)) ; sum(fulldata$E7==6, na.rm=T)
+E7p <- 35/132
+
+E8c <- data.frame(E8=c(1,2,3,4,5)) ; sum(fulldata$E8==4, na.rm=T)
+E8p <- 38/132
+
+#Average exam score
+Eaverage_percent <- ((E1p+E2p+E3p+E4p+E5p+E6p+E7p+E8p)/8)*100
+Eaverage_percent
+
+#Percent of questions participants guessed on
+guess <- mean(as.numeric(fulldata$GUESS_1),na.rm=TRUE)
+100-((guess/8)*100)
+```
+
+The exam was indeed difficult, with an overall average of ~33%. Interestingly, students responded that they guessed on ~28% of questions, so they had a relatively accurate representation of how they scored, though they scored slightly better than predicted. 
+
+```{r}
+#Bar graph of how many participants responded correctly for each given question
+edf<- data.frame(
+  Question= c("E1","E2","E3","E4","E5","E6","E7","E8"),
+  correct= c("49","38","85","24","45","35","35","38")
+)
+barcorrect<-ggplot(data=edf, aes(x=Question, y=correct)) + 
+  geom_bar(stat="identity", fill=c('cyan')) + 
+  ggtitle("Count of Correct Participant Responses for Each Given Question") +ylab("Count of Correct Answers")
+
+barcorrect
+```
+  
+As depicted by the above bar graph, the most missed question was E4, "Approximately what fraction of the human genome encodes proteins?" with the correct answer being 2%, and the question answered correctly the most was E3, "Quantity A = (x^2^+1) ; Quantity B = (2x-1)" with the correct multiple choice denoting that "Quantity A is greater". E3 was intentionally easier so that participants knew that they got at least some answers correct based off of knowledge, rather than chance with guessing.   
+
+-----------------------------------------------------------------------------------------------   
+
+## Limitations    
+
+- Participants were from WEIRD (Western, educated, industrialized, rich and democratic) societies, so translation of such effects to a different cohort is not certain   
+- Data was collected using convenience sampling, so data is less representative than had probability sampling been used
+- We didn’t control for technology used (e.g. different phones and laptops among the 4 group members) which could have prompted some variance in results   
+- n=132 is a small sample size, so results may have been more significant had the sample size been larger   
+- Since the posttest self-report measure was comprised of the combined average of three different questions(SCONFIDS_1, SCONFIDS2, SCONFIDS3), pretest and posttest scores were slightly different. The **same** pretest (MOOD_3) and posttest confidence questions should have been asked for clearer results and effects
+
+```{r}
+#Pie chart of participants' year in college to get a visual of the students that participated in the experiment
+year <- table(fulldata$YEAR)
+
+lb <- paste(names= c("Freshmen", "Sophomores", "Juniors", "Seniors", "Grad"), "\n", year, sep="")
+
+pie(year, labels=lb, col = c("darkblue","darkcyan","cornsilk", "salmon", "firebrick4"), main="Pie Chart of Participants' Year in College")
+```
+  
+As can be seen in the pie chart above, college years were not evenly distributed, nor did they closely match UIUC's actual demographics given the small sample size. A larger sample size would be needed to establish more concrete results.   
+
+```{r}
+#Histogram depicting participants' age
+age <- table(fulldata$AGE)
+ agedf<- data.frame(Agevalue = c(fulldata$AGE))
+ ggplot(agedf, aes(x=Agevalue)) + 
+   geom_histogram(color="black", fill="darkblue") +xlab("Age (in years)") + ylab("Count") + ggtitle("Historgram of Participants' Age")
+age
+```
+As seen above, the participants' age range is not very varied (mainly students in their late teens to mid twenties, with an exception of a 36 year old), so even if results were statistically significant, they might not necessarily be applicable to different age cohorts.       
+
+-----------------------------------------------------------------------------------------------  
+
+## Implications   
+
+- It would be interesting to see this replicated with different cohorts and see if there’s an effect on a population that isn’t quite the “selfie” generation   
+- Future research evaluating such effects by means of a longitudinal, observational study in “real life” context (such as actual test performance on self-confidence effects, effects of stress on test performance or vice versa, move beyond test performance feedback (possibly job performance evaluation at more advanced stages in life))    
+
+-----------------------------------------------------------------------------------------------     
+
+## Conclusions        
+
+Based off of our research, we established that perceived test performance feedback does not affect self-confidence levels, granted there were many limitations to this study. Both forms of measurement did not yield significant results: receiving negative feedback on the eight-item test did not increase time spent editing selfies on Instagram, as well as did not decrease self-confidence levels in the post-test. More research and replication on a grander scale would need to be done to see the extent of this effect in different environments i.e. besides a college setting. Research entailing self-confidence based off of test-performance allows us to get a glimpse of the magnitude and role that academics play in one’s self-image, regarding self-esteem and identity and can also work to enhance these measurements. With further research, we can accomplish creating less stressful forms of performance evaluation in academic settings which can result in diminishing emotional distress associated with low self-esteem among college students.        
+
+
+
